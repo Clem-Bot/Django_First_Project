@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Master Page{% endblock title %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+    
+    <div class="controls-container">
+        <div class="color-buttons">
+            <strong>Change Text Color:</strong> 
+            <button class="color-btn" id="darkBtn">Dark</button>
+            <button class="color-btn" id="blueBtn">Blue</button>
+            <button class="color-btn" id="redBtn">Red</button>
+            <button class="color-btn" id="greenBtn">Green</button>
+        </div>
+
+        <div class="size-control">
+            <label for="textSizeSlider">Text Size:</label>
+            <input type="range" id="textSizeSlider" min="12" max="20" value="16">
+            <span id="sizeValue">16px</span>
+        </div>
+    </div>
+
+    <ul class ="messages">
+        {% for message in messages %}
+        <li {% if messages.tags %} class ="{{message.tags}}"{% endif %}>{{message}}</li>
+        {% endfor %}
+    </ul>
+    {% block content %}
+    {% endblock content %}
+
+    <script src="{% static 'js/controls.js' %}"></script>
+</body>
+</html>

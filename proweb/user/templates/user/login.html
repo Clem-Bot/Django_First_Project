@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% load static %} 
+<title>{% block title %}Login Page{% endblock title %}</title>
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'user/styles/login.css' %}" />
+{% endblock extra_css %}
+    {% block content %}
+    {% if page == 'register' %}
+    <div class="login-container">
+    <h1>Register your account</h1>
+    <form method ='POST' action ="{% url 'register_users' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type ="submit" value = "Register Users"/>
+    </form>
+    <p>Already have an account <a href="{% url 'login_users' %}">Sign in</a></p>
+    </div>
+    {% else %}
+    <form class="login-container" action ="{% url 'login_users' %}" method = "POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter your Username"/>
+        <input type="password" name="password" placeholder="Enter password"/>
+        <input type="submit" value="Login"/>
+        <p>Don't have an account <a href="{% url 'register_users' %}">Sign up</a></p>
+    </form>
+    {% endif %}
+    {% endblock content %}
+</body>
+</html>

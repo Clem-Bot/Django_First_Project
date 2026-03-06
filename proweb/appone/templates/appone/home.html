@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+<title>{% block title %}Home Page{% endblock title %}</title>
+
+{% block extra_css %}{% endblock %}
+{% block content %}
+    <h1>Welcome to the Home page of App one</h1>
+{% for k, v in abc.items %}
+{{k}} {{v}}
+{% endfor %}
+    
+{% endblock content %}
+</body>
+</html>

@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  body {
+    min-height: 100vh;
+    background: #f4f6f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Center content nicely */
+  body > h1,
+  body > p,
+  .login-container {
+    text-align: center;
+  }
+  
+  /* Login box */
+  .login-container {
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    margin-top: 15px;
+  }
+  
+  /* Headings */
+  h1 {
+    color: #333;
+    margin-bottom: 6px;
+  }
+  
+  p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  /* Inputs */
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .login-container input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* Submit button */
+  .login-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .login-container input[type="submit"]:hover {
+    background: #0056b3;
+  }
+  
